@@ -14,7 +14,7 @@ const rename = async () => {
     const errorMessage = 'FS operation failed';
 
     try {
-        await fs.rename(path.join(fileDirectory, wrongFileName), path.join(fileDirectory, correctFileName))
+        await fs.rename(path.join(fileDirectory, wrongFileName), path.join(fileDirectory, correctFileName));
     } catch (e) {
         throw new Error(errorMessage);
     }
