@@ -6,13 +6,14 @@ const read = async () => {
     const __filename = fileURLToPath(import.meta.url);
     const __dirName = path.dirname(__filename);
 
+    const encoding = 'utf-8';
     const dirToRead = 'files';
     const fileToRead = 'fileToRead.txt';
     const errorMessage = 'FS operation failed';
     const pathToRead = path.join(__dirName, dirToRead, fileToRead);
 
     try {
-        const readableStream = createReadStream(pathToRead, {encoding: 'utf-8'});
+        const readableStream = createReadStream(pathToRead, {encoding});
         readableStream.pipe(process.stdout);
     } catch (e) {
         throw new Error(errorMessage);
